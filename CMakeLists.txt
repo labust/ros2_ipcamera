@@ -40,6 +40,7 @@ ament_target_dependencies(ipcamera_component
   "camera_calibration_parsers"
   "image_transport")
 
+target_link_libraries(ipcamera_component ${OpenCV_LIBS})
 rclcpp_components_register_nodes(ipcamera_component "ros2_ipcamera::IpCamera")
 set(node_plugins "${node_plugins}ros2_ipcamera::IpCamera;$<TARGET_FILE:ipcamera_component>\n")
 
